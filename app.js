@@ -13,6 +13,15 @@ async function buscarPais(){
     const respuesta = await fetch("https://restcountries.com/v3.1/name/" + inputPais.value);
     const infoPais = await  respuesta.json();
 
+    const pais = infoPais[0];
+    nombre.innerText = pais.name.common;
+    nombreoficial.innerText = pais.name.official;
+    capital.innerText = pais.capital;
+    region.innerText = pais.region
+    idioma.innerText = Object.values(pais.languages)[0];
+    Zonahora.innerText = pais.timezones;
+    bandera.src =  pais.flags.png;
+
 };
 
 botonBuscar.addEventListener("click", e => {
