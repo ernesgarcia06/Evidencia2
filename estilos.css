@@ -43,7 +43,7 @@ button:hover {
   background-color: #ffffff;
 }
 
-#bandera {
+#bandera *{
   width: 25vw;
   height: 25vh;
   border-radius: 10px;

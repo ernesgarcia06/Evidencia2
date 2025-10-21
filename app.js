@@ -26,7 +26,10 @@ async function buscarPais(){
     region.innerText = pais.region
     idioma.innerText = Object.values(pais.languages)[0];
     Zonahora.innerText = pais.timezones;
-    bandera.src =  pais.flags.png;
+    bandera.innerHTML = "";
+    const img = document.createElement("img");
+    img.src = pais.flags.png;
+    bandera.appendChild(img);
     mapa.src = "https://www.google.com/maps?q=" + pais.name.common + "&output=embed";
 
 };
