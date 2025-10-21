@@ -10,7 +10,7 @@ const Zonahora = document.getElementById("hora");
 const mapa = document.getElementById("mapa");
 
 async function buscarPais(){
-    const respuesta = await fetch("https://restcountries.com/v3.1/name/" + inputPais.value);
+    const respuesta = await fetch("https://restcountries.com/v3.1/name/" + inputPais.value + "?fullText=true");
     const infoPais = await  respuesta.json();
 
     const pais = infoPais[0];
@@ -21,6 +21,7 @@ async function buscarPais(){
     idioma.innerText = Object.values(pais.languages)[0];
     Zonahora.innerText = pais.timezones;
     bandera.src =  pais.flags.png;
+    mapa.src = "https://www.google.com/maps?q=" + pais.name.common + "&output=embed";
 
 };
 
