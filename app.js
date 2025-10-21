@@ -13,7 +13,13 @@ async function buscarPais(){
     const respuesta = await fetch("https://restcountries.com/v3.1/name/" + inputPais.value + "?fullText=true");
     const infoPais = await  respuesta.json();
 
-    const pais = infoPais[0];
+    let pais;
+    if (infoPais[0]) {
+        pais = infoPais[0];
+    }
+    else{
+        alert(`Pais no encontrado. Favor de revisar que el nombre este bien escrito`);
+    };
     nombre.innerText = pais.name.common;
     nombreoficial.innerText = pais.name.official;
     capital.innerText = pais.capital;
