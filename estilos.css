@@ -1,0 +1,19 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #ffe5b1;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 30px;
+}
+
+h1 {
+  color: #195189;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(254, 191, 115, 0.868);
+  border-radius: 10px;
+}
